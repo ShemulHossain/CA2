@@ -1,0 +1,104 @@
+[
+    {
+        "model": "concert.category",
+        "pk": "cc9d2e73-6e9c-4aa9-848b-cf22b74672a2",
+        "fields": {
+            "name": "Bands",
+            "description": "Come book tickets to see your favourite bands perform live now!",
+            "image": "category/bandbanner.jpg"
+        }
+    },
+    {
+        "model": "concert.category",
+        "pk": "ccbac6d1-5957-407a-b188-4806021e3ee2",
+        "fields": {
+            "name": "Singers",
+            "description": "Come book tickets to see your favourite singers perform live on stage now!",
+            "image": "category/singerbanner.jpg"
+        }
+    },
+    {
+        "model": "concert.artist",
+        "pk": "276a003d-caba-4a04-b415-c76157424843",
+        "fields": {
+            "name": "Bring Me the Horizon",
+            "description": "Bring Me the Horizon are performing all of their iconic songs in their upcoming concert in 2023!",
+            "concert_date": "2023-01-20T20:40:00Z",
+            "category": "cc9d2e73-6e9c-4aa9-848b-cf22b74672a2",
+            "ticket_price": "55.99",
+            "image": "artist/bring_me_the_horizon.jpg",
+            "stock": 50,
+            "available": true
+        }
+    },
+    {
+        "model": "concert.artist",
+        "pk": "292cd5ef-5abe-48e7-820d-ee6d4ac1a4e1",
+        "fields": {
+            "name": "5 Seconds of Summer",
+            "description": "5 Seconds of Summer are holding their upcoming concert in 2023 where they'll perform lots of new songs along with their iconic songs!",
+            "concert_date": "2023-06-18T22:00:00Z",
+            "category": "cc9d2e73-6e9c-4aa9-848b-cf22b74672a2",
+            "ticket_price": "69.50",
+            "image": "artist/5_seconds_of_summer.jpg",
+            "stock": 7,
+            "available": true
+        }
+    },
+    {
+        "model": "concert.artist",
+        "pk": "362be55d-f184-421e-a12c-66f56b7eb38a",
+        "fields": {
+            "name": "Conan Gray",
+            "description": "Conan Gray is holding his concert next year in 2023 where he'll perform all his new songs from his new album!",
+            "concert_date": "2023-07-21T21:30:00Z",
+            "category": "ccbac6d1-5957-407a-b188-4806021e3ee2",
+            "ticket_price": "80.00",
+            "image": "artist/conan_gray.jpg",
+            "stock": 5,
+            "available": true
+        }
+    },
+    {
+        "model": "concert.artist",
+        "pk": "635e41c3-0257-4e4f-bd54-605a52606b67",
+        "fields": {
+            "name": "Maroon 5",
+            "description": "Maroon 5 are holding their \"Maroon V Tour\" next year in 2023!",
+            "concert_date": "2023-07-29T23:30:00Z",
+            "category": "cc9d2e73-6e9c-4aa9-848b-cf22b74672a2",
+            "ticket_price": "35.99",
+            "image": "artist/maroon5.jpg",
+            "stock": 23,
+            "available": true
+        }
+    },
+    {
+        "model": "concert.artist",
+        "pk": "78a298c5-3b0d-4664-9601-95cab05d0e25",
+        "fields": {
+            "name": "Olivia Rodrigo",
+            "description": "Olivia Rodrigo is holding her \"Sour Tour\" next year in 2023!",
+            "concert_date": "2023-05-17T21:00:00Z",
+            "category": "ccbac6d1-5957-407a-b188-4806021e3ee2",
+            "ticket_price": "75.50",
+            "image": "artist/olivia_rodigro.jpg",
+            "stock": 14,
+            "available": true
+        }
+    },
+    {
+        "model": "concert.artist",
+        "pk": "cf98d4ee-0ad9-43f7-b43d-f37fd0ddadab",
+        "fields": {
+            "name": "Taylor Swift",
+            "description": "\"Midnight Tour\" is coming up this year so book your concert tickets now!",
+            "concert_date": "2022-12-11T22:00:00Z",
+            "category": "ccbac6d1-5957-407a-b188-4806021e3ee2",
+            "ticket_price": "100.00",
+            "image": "artist/taylor_swift.jpg",
+            "stock": 3,
+            "available": true
+        }
+    }
+]

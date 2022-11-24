@@ -2,12 +2,37 @@
 <html>
 <head>
  <meta charset="utf-8">
- <title>{% block title %}Newspaper App{% endblock title %}</title>
+ <title>{% block title %}Concert Booking App{% endblock title %}</title>
 </head>
 <body>
- <main>
+    {% if user.is_authenticated %}
+    <ul class="">
+      <li class="">
+          <a href="#" class="" data-bs-toggle="">{{user.username}}</a>
+          <div class="">
+            {% if user.profile %}
+              <a href="{% url 'show_profile' user.profile.pk %}">View Profile</a>
+              <a href="{% url 'edit_profile' user.profile.pk %}">Edit Profile</a>
+              <a href="{% url 'password_change'%}">Change Password</a>
+              <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+              <a href="{% url 'password_change'%}">Change Password</a>
+              <a href="{% url 'logout' %}">Logout</a>
+            {% endif %}
+          </div>
+        </li>
+    </ul>
+    {% else %}
+    <form class="">
+      <a href="{% url 'login' %}">
+      Log In</a>
+      <a href="{% url 'signup' %}">
+      Sign up</a>
+    </form>
+  {% endif %}
+ <div class="">
  {% block content %}
  {% endblock content %}
- </main>
+ </div>
 </body>
 </html>

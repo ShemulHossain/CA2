@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block metadescription %}
+{% if category %}
+{{ category.description|truncatewords:155 }}
+{% else %}
+Welcome to ConcertFinder. Book concert tickets to any artist here
+{% endif %}
+{% endblock %}
+{% block title %}
+{% if category %}
+{{ category.name }} - ConcertFinder
+{% else %}
+See Our List of Concerts - ConcertFinder
+{% endif %}
+{% endblock %}
+{% block content %}
+<!--Breadcrumb navigation-->
+{% if category %}
+<div>
+    <div>
+        <p><a href="{% url 'concert:all_artists' %}">Concert Lists</a> | {{category.name}}</p>
+    </div>
+</div>
+{% endif %}
+<div>
+    {% if category %}
+    <img src="{{category.image.url}}" alt="{{category.name}}">
+</div>
+<br>
+<div>
+    <h1>{{category.name}}</h1>
+    <p>{{category.description}}</p>
+</div>
+{% else %}
+<img src="{% static 'images/concertbanner.jpg' %}" alt="Concert List">
+</div>
+<br>
+<div>
+    <h1>Artist List</h1>
+    <p>Book concert tickets to any of your favourite artists. Tickets are selling almost everyday so come book now!</p>
+</div>
+{% endif %}
+<div>
+    <div>
+        {% for artist in art %}
+        <div>
+            <div>
+                <a class="img" href="{{artist.get_absolute_url}}"><img src="{{artist.image.url}}" alt="{{artist.name}}"></a>
+                <div>
+                    <h4>{{artist.name}}</h4>
+                    <p>€{{artist.ticket_price}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+</div>
+{% endblock %}

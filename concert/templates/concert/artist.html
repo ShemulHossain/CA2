@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block metadescription %}
+{{ artist.description|truncatewords:155 }}
+{% endblock %}
+{% block title %}
+{{ artist.name }} ConcertFinder
+{% endblock %}
+{% block content %}
+<div>
+    <div>
+        <p><a href="{% url 'concert:all_artists' %}">Home</a> | <a href="{{artist.category.get_url }}">{{artist.category}}</a> |
+            {{artist.name}}</p>
+    </div>
+    <div>
+        <br>
+        <div>
+            <div>
+                <div>
+                    <img src="{{artist.image.url}}" alt="{{artist.name}}">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h1>{{artist.name}}</h1>
+                    <p>€{{artist.ticket_price}}</p>
+                    <p>Artist Description</p>
+                    <p>{{artist.description}}</p>
+                    {% if artist.stock == 0%}
+                    <p><b>Out of Stock</b></p>
+                    {% else %}
+                    <a href="">Add to Cart</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
