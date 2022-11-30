@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'users',
     'pages',
     'concert',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +140,4 @@ STATICFILES_FINDERS = [
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+CRISPY_TEMPLATE_PACK = 'bootstrap5'

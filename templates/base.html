@@ -1,20 +1,31 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
  <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>{% block title %}Concert Booking App{% endblock title %}</title>
+ <!-- CSS only -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+ rel="stylesheet" integrity="sha384-
+ Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+ crossorigin="anonymous">
+ <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">Concert Finder</a>
     {% if user.is_authenticated %}
-    <ul class="">
+    <ul class="nav navbar-nav ms-auto">
       <li class="">
-          <a href="#" class="" data-bs-toggle="">{{user.username}}</a>
+        <a href="#">{{user.username}}</a>
           <div class="">
             {% if user.profile %}
-              <a href="{% url 'show_profile' user.profile.pk %}">View Profile</a>
+              <a href="{% url 'show_profile' user.profile.pk %}" >View Profile</a>
               <a href="{% url 'edit_profile' user.profile.pk %}">Edit Profile</a>
-              <a href="{% url 'password_change'%}">Change Password</a>
-              <a href="{% url 'logout' %}">Logout</a>
+              <a href="{% url 'password_change'%}" class="">Change Password</a>
+              <a href="{% url 'logout' %}" class="">Logout</a>
             {% else %}
               <a href="{% url 'password_change'%}">Change Password</a>
               <a href="{% url 'logout' %}">Logout</a>
@@ -23,16 +34,25 @@
         </li>
     </ul>
     {% else %}
-    <form class="">
-      <a href="{% url 'login' %}">
+    <form class="form-inline ml-auto">
+      <a href="{% url 'login' %}" class="btn btn-outline-secondary">
       Log In</a>
-      <a href="{% url 'signup' %}">
+      <a href="{% url 'signup' %}" class="btn btn-primary ml-2">
       Sign up</a>
     </form>
   {% endif %}
- <div class="">
- {% block content %}
- {% endblock content %}
- </div>
+  </nav>
+
+  <div>
+    {% block content %}
+    {% endblock content %}
+  </div>
+
+
+ <!-- JavaScript Bundle with Popper -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-
+ OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+ crossorigin="anonymous"></script>
 </body>
 </html>
