@@ -4,33 +4,34 @@
 {{ artist.description|truncatewords:155 }}
 {% endblock %}
 {% block title %}
-{{ artist.name }} ConcertFinder
+{{ artist.name }} Concert Finder
 {% endblock %}
 {% block content %}
-<div>
-    <div>
-        <p><a href="{% url 'concert:all_artists' %}">Home</a> | <a href="{{artist.category.get_url }}">{{artist.category}}</a> |
-            {{artist.name}}</p>
+<div class="">
+    <div class="">
+        <p><a href="{% url 'concert:all_artists' %}">Home</a> | <a href="{{artist.category.get_url }}">{{artist.category}}</a> | {{artist.name}}</p>
     </div>
-    <div>
+    <div class="">
         <br>
-        <div>
-            <div>
+        <div class="">
+            <div class="">
                 <div>
                     <img src="{{artist.image.url}}" alt="{{artist.name}}">
                 </div>
             </div>
-            <div>
+            <div class="">
                 <div>
-                    <h1>{{artist.name}}</h1>
-                    <p>€{{artist.ticket_price}}</p>
-                    <p>Artist Description</p>
-                    <p>{{artist.description}}</p>
-                    {% if artist.stock == 0%}
-                    <p><b>Out of Stock</b></p>
-                    {% else %}
-                    <a href="">Add to Cart</a>
-                    {% endif %}
+                        <h1 class="">{{artist.name}}</h1>
+                        <p>€{{artist.ticket_price}}</p>
+                        <p class="">Concert Date:</p>
+                        <p class="">{{artist.concert_date}}</p>
+                        <p class="">Artist Description:</p>
+                        <p class="">{{artist.description}}</p>
+                        {% if artist.stock == 0%}
+                        <p class=""><b>Out of Stock</b></p>
+                        {% else %}
+                        <a class="" href="">Add to Cart</a>
+                        {% endif %}
                 </div>
             </div>
         </div>
