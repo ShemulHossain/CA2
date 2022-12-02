@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users',
     'pages',
     'concert',
+    'search',
     'crispy_forms',
     'crispy_bootstrap5',
 ]
