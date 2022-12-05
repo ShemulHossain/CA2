@@ -1,6 +1,7 @@
 {% load static %}
 <header>
  <div style="text-align: center;">
- <img src="{% static 'images/cflogo.jpg' %}" alt="Concert Booking System">
+    <a href="{% url 'concert:all_artists' %}">
+    <img src="{% static 'images/cflogo.jpg' %}" alt="Concert Booking System">
  </div>
 </header>

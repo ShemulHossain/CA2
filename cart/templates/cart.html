@@ -49,16 +49,16 @@
                                      alt="" class="float-left rounded custom_image"></a>
                                 </td>
                                 <td class="text-left">
-                                    {{cart_item.product.name}}
+                                    {{cart_item.artist.name}}
                                     <br>
-                                    Unit Price: €{{cart_item.product.price}}
+                                    Unit Price: €{{cart_item.artist.ticket_price}}
                                     <br>
-                                    Qty: {{cart_item.quantity}} x €{{cart_item.product.price}}
+                                    Qty: {{cart_item.quantity}} x €{{cart_item.artist.ticket_price}}
                                 </td>
                                 <td>
                                     €{{cart_item.sub_total}}
                                 </td>
-                                {% if cart_item.quantity < cart_item.product.stock %}
+                                {% if cart_item.quantity < cart_item.artist.stock %}
                                     <td>
                                         <a href="{% url 'cart:add_cart' cart_item.artist.id %}" class="custom_a"><i class="fas fa-plus-circle  
                                            custom_icon"></i></a>&nbsp;

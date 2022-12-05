@@ -14,12 +14,20 @@
  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 </head>
 <body class="d-flex flex-column min-vh-100">
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
+        <div class="pt-2 justify-content-center" style="text-align: center;">
+           <a hrxef="{% url 'concert:all_artists' %}">
+           <img src="{% static 'images/cflogo.jpg' %}" alt="Concert Booking System" class="rounded-circle" height="70">
+        </div>
       <a class="navbar-brand" href="{% url 'home' %}">Concert Finder</a>
       <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
         {% if user.is_authenticated %}
         <ul class="nav navbar-nav ms-auto">
+          {% for cat in links %}
+          <li class="nav-item"><a class="nav-link text-white" href="{{cat.get_absolute_url}}">{{cat.name}}</a></li>
+          {% endfor %}
           <li class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{user.username}}</a>
               <div class="dropdown-menu dropdown-menu-end">

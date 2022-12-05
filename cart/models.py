@@ -27,4 +27,3 @@ class CartItem(models.Model):
     def __str__(self):
         return self.product
 
-# Create your models here.

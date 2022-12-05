@@ -45,7 +45,7 @@
                         {% for cart_item in cart_items %}
                             <tr>
                                 <td class="border border-end-0">
-                                    <a href="{{cart_item.artist.get_absolute_url}}"><img src="{{cart_item.artist.image.url}}" 
+                                    <a href="{{cart_item.product.get_url}}"><img src="{{cart_item.product.image.url}}" 
                                      alt="" class="float-left rounded custom_image"></a>
                                 </td>
                                 <td class="text-left">

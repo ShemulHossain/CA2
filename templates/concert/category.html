@@ -17,23 +17,23 @@ See Our List of Concerts - ConcertFinder
 {% block content %}
 <!--Breadcrumb navigation-->
 {% if category %}
-<div>
-    <div>
-        <p><a href="{% url 'concert:all_artists' %}">Concert Lists</a> | {{category.name}}</p>
+<div class="row my_row_class">
+    <div class="mx-auto">
+        <p><a class="text-decoration-none text-dark" href="{% url 'concert:all_artists' %}">Concert Lists</a> | {{category.name}}</p>
     </div>
 </div>
 {% endif %}
 <div>
     {% if category %}
-    <img src="{{category.image.url}}" alt="{{category.name}}">
+    <img class="mx-auto d-block" src="{{category.image.url}}" height="400" alt="{{category.name}}">
 </div>
 <br>
 <div>
-    <h1>{{category.name}}</h1>
-    <p>{{category.description}}</p>
+    <h1 class="text-center my_title">{{category.name}}</h1>
+    <p class="text-center">{{category.description}}</p>
 </div>
 {% else %}
-<img src="{% static 'images/concertbanner.jpg' %}" alt="" height="350" width="1850" class="mx-auto d-block rounded mt-4">
+<img src="{% static 'images/concertbanner.jpg' %}" alt="" height="350" width="1520" class="mx-auto d-block rounded mt-4">
 </div>
 <br>
 <div class="text-center">
@@ -45,15 +45,27 @@ See Our List of Concerts - ConcertFinder
     <div class="row">
         {% for artist in art %}
         <div class="col-sm-3">
-            <div class="card mt-3 ms-4" style="width:400px">
+            <div class="card mt-3 ms-4" style="width:350px">
                 <a class="img" href="{{artist.get_absolute_url}}"><img src="{{artist.image.url}}" alt="{{artist.name}}" width="300" height="300" class="mx-auto d-block mt-3"></a>
-                <div>
+                <div class="card-body">
                     <h4 class="text-center">{{artist.name}}</h4>
                     <p class="text-center">{{artist.concert_date}}</p>
                 </div>
             </div>
         </div>
         {% endfor %}
+    </div>
+    <div class="mx-auto">
+        {% if art.paginator.num_pages > 1 %}
+            <hr>
+            <div class="text-center">
+                {% for pg in art.paginator.page_range %}
+                    <a href="?page={{pg}}" class="btn btn-light btn-sm {%
+                    if artists.number == pg %}active{% endif
+                    %}">{{pg}}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
     </div>
     <br>
 </div>

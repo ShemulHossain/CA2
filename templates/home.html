@@ -6,9 +6,9 @@
         <img src="{% static 'images/cflogo.jpg' %}" alt="" class="mx-auto d-block rounded-circle p-1" width="150">
     </div>
     <div>
-        <img src="{% static 'images/concertbanner.jpg' %}" alt="" height="350" width="1850" class="mx-auto d-block rounded">
+        <img src="{% static 'images/concertbanner.jpg' %}" alt="" height="350" width="1520" class="mx-auto d-block rounded">
         {% if user.is_authenticated %}
-            <div class="bg-success text-white text-center container-md rounded-bottom p-1">
+            <div class="bg-success text-white text-center rounded-bottom p-2">
                 <a href="{% url 'concert:all_artists' %}" class="text-decoration-none text-white">See all tickets</a>
             </div>
         {% else %}
