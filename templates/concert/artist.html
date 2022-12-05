@@ -30,7 +30,7 @@
                         {% if artist.stock == 0%}
                         <p class=""><b>Out of Stock</b></p>
                         {% else %}
-                        <a class="btn btn-outline-dark btn-secondary text-white ms-3 mt-5 text-decoration-none" href="">Add to Cart</a>
+                        <a class="btn btn-outline-dark btn-secondary text-white ms-3 mt-5 text-decoration-none" href="{% url 'cart:add_cart' artist.id %}">Add to Cart</a>
                         {% endif %}
                 </div>
             </div>

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'search',
     'crispy_forms',
     'crispy_bootstrap5',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'concert.context_processors.menu_links',
+                'cart.context_processors.counter',
             ],
         },
     },

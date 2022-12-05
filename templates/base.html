@@ -10,6 +10,7 @@
  rel="stylesheet" integrity="sha384-
  Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
  crossorigin="anonymous">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -37,6 +38,15 @@
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
           </form>   
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cart:cart_detail' %}">Your Cart</a>
+        </li>
+        {% if item_count > 0 %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'cart:cart_detail' %}"><i
+            class="fas fa-shopping-cart">({{item_count}})</i></a>
+          </li>
+          {% endif %}
     </ul>
     {% else %}
     <form class="form-inline ml-auto">
