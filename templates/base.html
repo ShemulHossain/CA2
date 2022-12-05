@@ -17,20 +17,27 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-        <div class="pt-2 justify-content-center" style="text-align: center;">
-           <a hrxef="{% url 'concert:all_artists' %}">
-           <img src="{% static 'images/cflogo.jpg' %}" alt="Concert Booking System" class="rounded-circle" height="70">
+        <div class="pt-2 justify-content-center me-2" style="text-align: center;">
+          <a href="{% url 'home' %}">
+            <img src="{% static 'images/cflogo.jpg' %}" alt="Concert Booking System" class="rounded-circle" height="70">
+          </a>
         </div>
       <a class="navbar-brand" href="{% url 'home' %}">Concert Finder</a>
-      <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarSupportedContent">
         {% if user.is_authenticated %}
         <ul class="nav navbar-nav ms-auto">
-          {% for cat in links %}
-          <li class="nav-item"><a class="nav-link text-white" href="{{cat.get_absolute_url}}">{{cat.name}}</a></li>
-          {% endfor %}
+          <li class="nav-item h-50">
+            <a class="nav-link" href="{% url 'cart:cart_detail' %}">Your Cart</a>
+          </li>
+          {% if item_count > 0 %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'cart:cart_detail' %}"><i
+              class="fas fa-shopping-cart">({{item_count}})</i></a>
+            </li>
+            {% endif %}
           <li class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{user.username}}</a>
-              <div class="dropdown-menu dropdown-menu-end">
+              <a href="#" class="nav-link dropdown-toggle d-flex justify-content-end" data-bs-toggle="dropdown">{{user.username}}</a>
+            <div class="dropdown-menu dropdown-menu-end">
             {% if user.profile %}
               <a href="{% url 'show_profile' user.profile.pk %}" class="dropdown-item">View Profile</a>
               <a href="{% url 'edit_profile' user.profile.pk %}" class="dropdown-item">Edit Profile</a>
@@ -40,21 +47,13 @@
               <a href="{% url 'password_change'%}" class="dropdown-item">Change Password</a>
               <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
             {% endif %}
+          
           </div>
           <form class="d-flex" action="{% url 'search:searchResult' %}" method="get">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
           </form>   
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'cart:cart_detail' %}">Your Cart</a>
-        </li>
-        {% if item_count > 0 %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'cart:cart_detail' %}"><i
-            class="fas fa-shopping-cart">({{item_count}})</i></a>
-          </li>
-          {% endif %}
     </ul>
     {% else %}
     <form class="form-inline ml-auto">
@@ -63,7 +62,9 @@
       <a href="{% url 'signup' %}" class="btn btn-success ml-2">
       Sign up</a>
     </form>
+  
   {% endif %}
+
   </nav>
   <div>
     {% block content %}

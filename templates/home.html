@@ -5,10 +5,14 @@
     <div class="bg-dark mt-3 mb-5">
         <img src="{% static 'images/cflogo.jpg' %}" alt="" class="mx-auto d-block rounded-circle p-1" width="150">
     </div>
-    <div>
+    <div class="border rounded w-50 mx-auto d-block mb-5">
+        <h1 class="text-center">Tickets to all you favorite artists</h1>
+        <p class="text-center">Find tickets to all the popular singers and bands!</p>
+    </div>
+    <div class="mb-5">
         <img src="{% static 'images/concertbanner.jpg' %}" alt="" height="350" width="1520" class="mx-auto d-block rounded">
         {% if user.is_authenticated %}
-            <div class="bg-success text-white text-center rounded-bottom p-2">
+            <div class="bg-success text-white text-center rounded-bottom p-2 w-50 mx-auto d-block">
                 <a href="{% url 'concert:all_artists' %}" class="text-decoration-none text-white">See all tickets</a>
             </div>
         {% else %}

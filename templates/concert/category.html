@@ -19,7 +19,12 @@ See Our List of Concerts - ConcertFinder
 {% if category %}
 <div class="row my_row_class">
     <div class="mx-auto">
-        <p><a class="text-decoration-none text-dark" href="{% url 'concert:all_artists' %}">Concert Lists</a> | {{category.name}}</p>
+        <ul class="list-unstyled d-flex justify-content-end">
+          <li><a class="btn btn-outline-dark btn-secondary text-white m-1" href="{% url 'concert:all_artists' %}">Concerts Page ←</a></li>
+          {% for cat in links %}
+          <li class="btn btn-outline-dark btn-secondary text-white m-1"><a class="text-decoration-none text-white" href="{{cat.get_absolute_url}}">{{cat.name}}</a></li>
+          {% endfor %}
+        </ul>
     </div>
 </div>
 {% endif %}
@@ -33,6 +38,15 @@ See Our List of Concerts - ConcertFinder
     <p class="text-center">{{category.description}}</p>
 </div>
 {% else %}
+<div class="row my_row_class">
+    <div class="mx-auto">
+        <ul class="list-unstyled d-flex justify-content-end">
+          {% for cat in links %}
+          <li class="btn btn-outline-dark btn-secondary text-white m-1"><a class="text-decoration-none text-white" href="{{cat.get_absolute_url}}">{{cat.name}}</a></li>
+          {% endfor %}
+        </ul>
+    </div>
+</div>
 <img src="{% static 'images/concertbanner.jpg' %}" alt="" height="350" width="1520" class="mx-auto d-block rounded mt-4">
 </div>
 <br>
