@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block metadescription %}
+{{ artist.description|truncatewords:155 }}
+{% endblock %}
+{% block title %}
+{{ artist.name }} Concert Finder
+{% endblock %}
+{% block content %}
+<div class="">
+    <div class="">
+        <p><a href="{% url 'concert:all_artists' %}" class="btn btn-outline-dark btn-secondary text-white m-1">Concerts Page ←</a></p>
+    </div>
+    <div class="">
+        <br>
+        <div  class="d-flex justify-content-around">
+            <div class="">
+                <div>
+                    <img src="{{artist.image.url}}" alt="{{artist.name}}" width="400" height="400" class="mx-auto d-block border border-dark rounded-top border-2">
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                        <h1 class="text-center">{{artist.name}}</h1>
+                        <p class="ms-3 me-3">€{{artist.ticket_price}}</p>
+                        <p class="ms-3 me-3">Concert Date:</p>
+                        <p class="ms-3 me-3">{{artist.concert_date}}</p>
+                        <p class="ms-3 me-3 mt-5">Artist Description:</p>
+                        <p class="ms-3 me-3">{{artist.description}}</p>
+                        {% if artist.stock == 0%}
+                        <p class=""><b>Out of Stock</b></p>
+                        {% else %}
+                        <a class="btn btn-outline-dark btn-secondary text-white ms-3 mt-5 text-decoration-none" href="">Add to Cart</a>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
