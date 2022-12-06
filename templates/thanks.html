@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Thanks - Perfect Cushion Store
+{% endblock %}
+{% block content %}
+    <div>
+        <div class="text-center">
+            <br>
+            <br>
+            <h1 class="text-center my_title">
+                Thanks for placing your order
+            </h1>
+            <br>
+            <br>
+            <p>Your order number is: <b>{{ customer_order.id }}</b></p>
+            <br>
+            <p>
+                We have received your order and will begin processing right 
+                away.
+                <br>
+                To continue browsing click:
+            </p>
+            <a class="btn btn-outline-dark btn-secondary text-white m-1" href="{% url 'concert:all_artists' %}">Concerts Page ←</a>
+            <p>
+                <br>
+                To view order history click:
+            </p>
+            <a class="btn btn-outline-dark btn-secondary text-white m-1" href="{% url 'order:order_history' %}">Order History</a>
+        </div>
+    </div>
+    <br>
+    <br>
+{% endblock %}

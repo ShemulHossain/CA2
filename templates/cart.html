@@ -102,6 +102,22 @@
                         </tr>
                     </tbody>
                 </table>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                     data-key="{{ data_key }}"
+                             data-amount="{{ stripe_total }}"
+                             data-name="Concert Finder"
+                             data-description="{{ description }}"
+                             data-image="{% static 'images/cflogo.jpg' %}"
+                             data-locale="auto"
+                             data-currency="eur"
+                             data-shipping-address="true"
+                             data-billing-address="true"
+                             data-zip-code="true">
+                         </script>
+                    </form>
+                    
                 <div class="mx-auto">
                     <a href="{% url 'concert:all_artists' %}" class="btn btn-success btn-block 
                      my_custom_button">Continue 

@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'cart',
+    'stripe',
+    'order',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +146,5 @@ STATICFILES_FINDERS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+STRIPE_SECRET_KEY = 'sk_test_51MC2zGCZWGSQbpvizEmyYh6Jk6coVwHTymCmMBR0b2riKoX9GXs4aHSfPRoxVDlucXd6GM78mfnSswanmVneMGIY009irMBaJU'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51MC2zGCZWGSQbpvifvTtFw5FDrPA0nB3wvXeh17Iqnl2rModtxhWd7lcxWY08EIGtglftWvzQjR7Q5htK0p9pOoI008tv868kU'

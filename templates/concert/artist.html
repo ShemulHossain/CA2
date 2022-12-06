@@ -28,7 +28,7 @@
                         <p class="ms-3 me-3 mt-5">Artist Description:</p>
                         <p class="ms-3 me-3">{{artist.description}}</p>
                         {% if artist.stock == 0%}
-                        <p class=""><b>Out of Stock</b></p>
+                        <p class="btn btn-danger text-white ml-2 ms-2"><b>Out of Stock</b></p>
                         {% else %}
                         <a class="btn btn-outline-dark btn-secondary text-white ms-3 mt-5 text-decoration-none" href="{% url 'concert:venue' %}">Concert Venue Map</a>
                         <a class="btn btn-outline-dark btn-secondary text-white ms-3 mt-5 text-decoration-none" href="{% url 'cart:add_cart' artist.id %}">Add to Cart</a>
