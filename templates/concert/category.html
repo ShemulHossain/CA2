@@ -59,8 +59,8 @@ See Our List of Concerts - ConcertFinder
     <div class="row">
         {% for artist in art %}
         <div class="col-sm-3">
-            <div class="card mt-3 ms-4" style="width:350px">
-                <a class="img" href="{{artist.get_absolute_url}}"><img src="{{artist.image.url}}" alt="{{artist.name}}" width="300" height="300" class="mx-auto d-block mt-3"></a>
+            <div class="card  mt-3 ms-4" style="width:350px">
+                <a class="img" href="{{artist.get_absolute_url}}"><img src="{{artist.image.url}}" alt="{{artist.name}}" width="300" class="mx-auto d-block mt-3"></a>
                 <div class="card-body">
                     <h4 class="text-center">{{artist.name}}</h4>
                     <p class="text-center">{{artist.concert_date}}</p>

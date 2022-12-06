@@ -23,3 +23,8 @@ def art_list(request, category_id=None):
 def artist_detail(request, category_id, artist_id):
     artist = get_object_or_404(Artist, category_id=category_id, id=artist_id)
     return render(request, 'concert/artist.html', {'artist':artist})
+
+def concert_view(request):
+    context = {}
+    return render(request, 'concert/venue.html', context)
+

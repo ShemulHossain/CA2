@@ -1,8 +1,7 @@
 from django.urls import path
-from .views import SearchResultsListView
-
+from . import views
 app_name='search'
 
 urlpatterns = [
-path('', SearchResultsListView.as_view(), name='searchResult'),
+    path('', views.filterView, name = 'filter_search'),
 ]
