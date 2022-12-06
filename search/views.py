@@ -36,7 +36,7 @@ def filterView(request):
     if available == 'on':
         qs = qs.filter(available=True)
     elif notAvailable == 'on':
-        qs = qs.filter(available=False)
+        qs = qs.filter(stock=False)
 
     context = {
         'queryset':qs,

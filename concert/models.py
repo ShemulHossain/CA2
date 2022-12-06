@@ -34,7 +34,7 @@ class Artist(models.Model):
     ticket_price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to = 'artist', blank=True)
     stock = models.IntegerField()
-    available = models.BooleanField(default=True)
+    available = models.BooleanField(default=False)
 
     class Meta:
         ordering = ('name',)
