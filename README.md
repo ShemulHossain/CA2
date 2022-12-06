@@ -11,3 +11,4 @@ Patricia Torres-X00188069
 -Search Function
 -Change Password page
 -Profile page
+-Venue Map page
