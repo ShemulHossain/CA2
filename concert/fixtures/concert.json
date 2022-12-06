@@ -19,6 +19,20 @@
     },
     {
         "model": "concert.artist",
+        "pk": "2514b32c-a5d4-4467-b720-fa6a5b235d5f",
+        "fields": {
+            "name": "BTS",
+            "description": "BTS are upholding their new tour called \"Yet To Come\" in 2023!\r\nThey're gonna perform all of the new songs from their new album live on stage.\r\nBook your tickets now!",
+            "concert_date": "2023-07-25T20:00:00Z",
+            "category": "cc9d2e73-6e9c-4aa9-848b-cf22b74672a2",
+            "ticket_price": "150.00",
+            "image": "artist/bts.jpg",
+            "stock": 20,
+            "available": true
+        }
+    },
+    {
+        "model": "concert.artist",
         "pk": "276a003d-caba-4a04-b415-c76157424843",
         "fields": {
             "name": "Bring Me the Horizon",
@@ -84,6 +98,20 @@
             "ticket_price": "75.50",
             "image": "artist/olivia_rodigro.jpg",
             "stock": 14,
+            "available": true
+        }
+    },
+    {
+        "model": "concert.artist",
+        "pk": "b1b28a50-50f7-479d-a4d3-29d99338c60f",
+        "fields": {
+            "name": "Coldplay",
+            "description": "Coldplay are holding their upcoming \"My Universe World Tour\" in 2023! Come book your tickets to their tour now!",
+            "concert_date": "2023-08-18T21:30:00Z",
+            "category": "cc9d2e73-6e9c-4aa9-848b-cf22b74672a2",
+            "ticket_price": "89.99",
+            "image": "artist/coldplay.jpg",
+            "stock": 40,
             "available": true
         }
     },

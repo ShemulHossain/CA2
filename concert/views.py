@@ -9,7 +9,7 @@ def art_list(request, category_id=None):
         category = get_object_or_404(Category, id=category_id)
         artists = Artist.objects.filter(category=category, available=True)
 
-    paginator = Paginator(artists, 6)
+    paginator = Paginator(artists, 4)
     try:
         page = int(request.GET.get('page', '1'))
     except:
@@ -26,5 +26,5 @@ def artist_detail(request, category_id, artist_id):
 
 def concert_view(request):
     context = {}
-    return render(request, 'concert/venue.html', context)
+    return render(request, 'concert/venue.html',context)
 

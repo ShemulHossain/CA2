@@ -4,6 +4,9 @@
 Concert Venue Map
 {% endblock %}
 {% block content %}
+{% for cat in links %}
+<li class=" btn btn-outline-dark btn-secondary text-white m-1"><a class="text-decoration-none text-white" href="{{cat.get_absolute_url}}">{{cat.name}}</a></li>
+{% endfor %}
 
 <div class="text-center">
     <h1 class="bg-info">Venue Map</h1>
