@@ -14,5 +14,3 @@ Patricia Torres-X00188069
 -Profile page
 -Venue Map page
 
-Link to our Website:
-http://x00192450.pythonanywhere.com/
